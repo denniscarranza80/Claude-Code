@@ -1,0 +1,4 @@
+
+# Python cache (ui-ux-pro-max skill)
+.claude/skills/**/__pycache__/
+*.pyc
