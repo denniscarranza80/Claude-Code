@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse the full store directory at Plaza La Cima in Little Rock, AR — fashion, dining, home & gifts, health & beauty, and services. Search and filter by category." />
+  <meta name="theme-color" content="#0c3a46" />
+  <title>Store Directory | Plaza La Cima, Little Rock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-fade">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Plaza La Cima — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stores.html" aria-current="page">Stores</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="leasing.html" class="nav-cta">Leasing</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <p class="crumbs"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Stores</p>
+        <h1>Store Directory</h1>
+        <p class="lede">Forty-plus local shops, restaurants, and services under one roof. Search by name or filter by category to find exactly what you're after.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="directory-controls">
+          <label class="search">
+            <span class="visually-hidden">Search stores</span>
+            <input type="search" id="store-search" placeholder="Search stores…" autocomplete="off" />
+          </label>
+          <div class="filters" role="group" aria-label="Filter by category"><!-- chips built by directory.js --></div>
+        </div>
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+        <ul class="store-grid" id="store-grid"><!-- populated by directory.js --></ul>
+        <p class="no-results" id="no-results" hidden>No stores match your search. Try another term or clear the filter.</p>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container" style="text-align:center; max-width:640px">
+        <p class="eyebrow eyebrow-light center">Looking for a space?</p>
+        <h2 data-reveal>Your store could be next</h2>
+        <p data-reveal style="margin:1rem auto 1.75rem">Join the directory and reach thousands of weekly visitors in the River Market District.</p>
+        <a href="leasing.html" class="btn btn-gold" data-reveal>Explore leasing <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+            </span>
+            <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+          </a>
+          <p>1500 River Market Avenue, Little Rock, AR 72201. Little Rock's destination for shopping, dining &amp; gathering.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="stores.html">Store directory</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="visit.html">Hours &amp; map</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Business</h4>
+          <ul>
+            <li><a href="leasing.html">Leasing</a></li>
+            <li><a href="leasing.html">Available spaces</a></li>
+            <li><a href="visit.html#contact">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon–Thu · 10–8</li>
+            <li>Friday · 10–9</li>
+            <li>Saturday · 9–9</li>
+            <li>Sunday · 11–6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Plaza La Cima. All rights reserved.</p>
+        <p>Made in Little Rock, Arkansas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="directory.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

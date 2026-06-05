@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lease retail and restaurant space at Plaza La Cima in Little Rock, AR. Flexible spaces from 600 to 8,000 sq ft in the high-traffic River Market District." />
+  <meta name="theme-color" content="#0c3a46" />
+  <title>Leasing | Plaza La Cima, Little Rock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-fade">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Plaza La Cima — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="leasing.html" class="nav-cta" aria-current="page">Leasing</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section-dark">
+      <div class="container">
+        <p class="crumbs"><a href="index.html">Home</a> <span aria-hidden="true">/</span> Leasing</p>
+        <h1>Bring your business to the summit</h1>
+        <p class="lede">Join a thriving community of local retailers and restaurateurs in the heart of Little Rock's River Market District.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container leasing-wrap">
+        <div class="leasing-copy">
+          <p class="eyebrow">Why Plaza La Cima</p>
+          <h2>A storefront where the city already gathers</h2>
+          <p>
+            Plaza La Cima draws thousands of visitors every week to shop, eat, and attend
+            events on the riverfront. Flexible spaces from 600 to 8,000 sq ft are available
+            now — turnkey or built to your concept, with marketing and events support for
+            every tenant.
+          </p>
+          <ul class="leasing-points">
+            <li>High foot traffic in the heart of the River Market District</li>
+            <li>Turnkey and white-box build-out spaces available</li>
+            <li>Co-op marketing &amp; year-round events programming</li>
+            <li>Ample free parking keeps customers coming back</li>
+          </ul>
+          <div class="cta-band" style="margin-top:2.5rem; text-align:left">
+            <dl class="lease-stats" style="margin-top:0; padding-top:0; border:0">
+              <div><dt>15K+</dt><dd>Weekly visitors</dd></div>
+              <div><dt>600–8K</dt><dd>Sq ft available</dd></div>
+              <div><dt>92%</dt><dd>Currently leased</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <form class="leasing-form" id="leasing-form" novalidate>
+          <div>
+            <p class="form-title">Request leasing information</p>
+            <p style="font-size:.92rem">Tell us about your concept and our leasing team will reach out within two business days.</p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" />
+              <span class="err" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" />
+              <span class="err" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone <span style="color:var(--muted); font-weight:400">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="size">Space size</label>
+              <select id="size" name="size">
+                <option value="">No preference</option>
+                <option>600 – 1,500 sq ft</option>
+                <option>1,500 – 3,500 sq ft</option>
+                <option>3,500 – 8,000 sq ft</option>
+                <option>Food hall counter</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="business">Business / concept</label>
+            <input id="business" name="business" type="text" placeholder="e.g. coffee roaster, boutique, wellness studio" />
+          </div>
+          <div class="field">
+            <label for="message">Tell us more</label>
+            <textarea id="message" name="message" rows="4" placeholder="What are you looking for, and when?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Request leasing info</button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          <p style="font-size:.8rem; color:var(--muted); margin:0">
+            Prefer to talk? Call our leasing office at <a href="tel:+15015550142" style="color:var(--teal-800); font-weight:600">(501) 555-0142</a>.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+            </span>
+            <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+          </a>
+          <p>1500 River Market Avenue, Little Rock, AR 72201. Little Rock's destination for shopping, dining &amp; gathering.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="stores.html">Store directory</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="visit.html">Hours &amp; map</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Business</h4>
+          <ul>
+            <li><a href="leasing.html">Leasing</a></li>
+            <li><a href="leasing.html">Available spaces</a></li>
+            <li><a href="visit.html#contact">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon–Thu · 10–8</li>
+            <li>Friday · 10–9</li>
+            <li>Saturday · 9–9</li>
+            <li>Sunday · 11–6</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Plaza La Cima. All rights reserved.</p>
+        <p>Made in Little Rock, Arkansas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
