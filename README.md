@@ -64,6 +64,28 @@ python3 -m http.server 8000
   real images by setting a `background-image` on the matching `.media-fill` /
   `.tile-media`, or replace the element with an `<img loading="lazy">`.
 
-> The tenant names, suites, hours, phone, email, and address are realistic
-> **placeholders**. Replace them with Plaza La Cima's real details — the
-> structure stays the same.
+## Content status
+
+Plaza La Cima is **under development** at **11800 Stagecoach Road, Little Rock,
+AR 72210**. The site reflects that:
+
+- **Tacos al Carbon** is set as the confirmed/open tenant.
+- All other tenants render as **"Coming soon"** placeholders (`status: "soon"`
+  in `data.js`). Replace each with a real business — and flip `status` to
+  `"open"` and add a `suite` — as leases are signed.
+- Hours, phone `(501) 555-0142`, and emails are **placeholders** to swap when
+  finalized.
+
+### Adding photos & logos later
+
+Real imagery drops in without any restructuring:
+
+- **Tenant logos:** the directory uses lettered tiles (`.store-logo`). To use a
+  real logo, replace the letters with an `<img>` inside that element, or set a
+  `background-image` on it.
+- **Section / card photos:** swap any `.ph-*` gradient block for a real image by
+  setting `background-image` on the matching `.media-fill` / `.tile-media`, or
+  replace the element with `<img loading="lazy" …>`. Suggested spots: the hero,
+  the dining/events feature blocks, and each dining tile.
+- Drop image files in the project folder (e.g. an `/images` directory) and point
+  to them — everything stays static and fast.

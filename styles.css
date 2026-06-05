@@ -644,6 +644,23 @@ p { color: var(--ink-soft); }
   to { opacity: 1; transform: translateY(0); }
 }
 
+.store-card.is-open { border-color: var(--gold-300); }
+
+/* status badges (directory + dining tiles) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+.badge-open { background: var(--teal-100); color: var(--teal-800); }
+.badge-soon { background: var(--cream-deep); color: var(--muted); border: 1px dashed var(--line); }
+
 .no-results {
   text-align: center;
   padding: 3rem 1rem;

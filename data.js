@@ -3,9 +3,11 @@
    Single source of truth for the store directory, dining, and
    events. Edit here and every page updates automatically.
 
-   NOTE: Names, suites, hours and contact details below are
-   realistic placeholders for a real-business build. Replace with
-   the plaza's actual tenants/details — structure stays the same.
+   STATUS NOTE: Plaza La Cima is under development. "Tacos al
+   Carbon" is a confirmed tenant; the remaining entries are
+   placeholders marked status:"soon" ("Coming soon"). Replace the
+   placeholder name/desc/suite with each real tenant as leases are
+   signed — the structure stays the same.
    ============================================================= */
 (function (global) {
   "use strict";
@@ -14,42 +16,38 @@
      category : machine key used for filtering
      cat      : human label shown on cards
      desc     : one-line description
-     suite    : unit / location label
+     suite    : unit / location label (used when status === "open")
+     status   : "open" (confirmed) | "soon" (coming soon)
   */
   const STORES = [
-    // Fashion & Apparel
-    { name: "Magnolia & Co.", category: "fashion", cat: "Fashion", desc: "Women's boutique & accessories", suite: "Suite 110" },
-    { name: "Cima Menswear", category: "fashion", cat: "Fashion", desc: "Tailored suiting & casual wear", suite: "Suite 112" },
-    { name: "The Denim Bar", category: "fashion", cat: "Fashion", desc: "Premium jeans & wardrobe basics", suite: "Suite 118" },
-    { name: "Little Rock Kids", category: "fashion", cat: "Fashion", desc: "Children's apparel & shoes", suite: "Suite 120" },
-    { name: "Summit Shoe Co.", category: "fashion", cat: "Fashion", desc: "Footwear for the whole family", suite: "Suite 122" },
+    // Confirmed tenant
+    { name: "Tacos al Carbon", category: "dining", cat: "Dining", desc: "Authentic Mexican tacos, grilled al carbon", suite: "Now open", status: "open" },
 
-    // Dining
-    { name: "Delta Roast Coffee", category: "dining", cat: "Dining", desc: "Locally roasted coffee & pastries", suite: "Food Hall" },
-    { name: "The Catfish Co.", category: "dining", cat: "Dining", desc: "Southern comfort classics", suite: "Suite 200" },
-    { name: "Sora Ramen Bar", category: "dining", cat: "Dining", desc: "Japanese ramen & small plates", suite: "Suite 205" },
-    { name: "Pinnacle Pizza", category: "dining", cat: "Dining", desc: "Wood-fired pizza & pasta", suite: "Suite 210" },
-    { name: "Verdure", category: "dining", cat: "Dining", desc: "Fresh salads, bowls & juices", suite: "Food Hall" },
-    { name: "Sweet Magnolia Bakery", category: "dining", cat: "Dining", desc: "Cakes, cookies & celebration treats", suite: "Suite 214" },
-    { name: "El Mirador Cantina", category: "dining", cat: "Dining", desc: "Tacos, margaritas & riverfront patio", suite: "Suite 218" },
+    // Fashion & Apparel — coming soon
+    { name: "Women's Boutique", category: "fashion", cat: "Fashion", desc: "Apparel & accessories", status: "soon" },
+    { name: "Menswear", category: "fashion", cat: "Fashion", desc: "Tailored & casual wear", status: "soon" },
+    { name: "Shoes & Accessories", category: "fashion", cat: "Fashion", desc: "Footwear for the family", status: "soon" },
+    { name: "Kids' Apparel", category: "fashion", cat: "Fashion", desc: "Children's clothing & shoes", status: "soon" },
 
-    // Home & Gifts
-    { name: "River City Home", category: "home", cat: "Home & Gifts", desc: "Furniture & home decor", suite: "Suite 130" },
-    { name: "The Paper Lark", category: "home", cat: "Home & Gifts", desc: "Stationery, candles & gifts", suite: "Suite 132" },
-    { name: "Bloom Florals", category: "home", cat: "Home & Gifts", desc: "Fresh flowers & arrangements", suite: "Suite 134" },
-    { name: "Arkansas Made", category: "home", cat: "Home & Gifts", desc: "Local artisan goods & crafts", suite: "Suite 136" },
+    // Dining — coming soon
+    { name: "Coffee & Café", category: "dining", cat: "Dining", desc: "Locally roasted coffee & pastries", status: "soon" },
+    { name: "Bakery & Sweets", category: "dining", cat: "Dining", desc: "Cakes, cookies & treats", status: "soon" },
+    { name: "Casual Dining", category: "dining", cat: "Dining", desc: "Family restaurant & patio", status: "soon" },
 
-    // Health & Beauty
-    { name: "Glow Skincare Studio", category: "health", cat: "Health & Beauty", desc: "Facials, waxing & skincare", suite: "Suite 150" },
-    { name: "Clip & Co. Salon", category: "health", cat: "Health & Beauty", desc: "Hair styling & color", suite: "Suite 152" },
-    { name: "Polished Nail Bar", category: "health", cat: "Health & Beauty", desc: "Manicures & pedicures", suite: "Suite 154" },
-    { name: "Pinnacle Pharmacy", category: "health", cat: "Health & Beauty", desc: "Pharmacy & wellness essentials", suite: "Suite 156" },
+    // Home & Gifts — coming soon
+    { name: "Home & Decor", category: "home", cat: "Home & Gifts", desc: "Furnishings & home goods", status: "soon" },
+    { name: "Gifts & Stationery", category: "home", cat: "Home & Gifts", desc: "Cards, candles & gifts", status: "soon" },
+    { name: "Florist", category: "home", cat: "Home & Gifts", desc: "Fresh flowers & arrangements", status: "soon" },
 
-    // Services
-    { name: "La Cima Optical", category: "services", cat: "Services", desc: "Eye exams & designer eyewear", suite: "Suite 160" },
-    { name: "QuickFix Mobile", category: "services", cat: "Services", desc: "Phone & device repair", suite: "Suite 162" },
-    { name: "First Arkansas Bank", category: "services", cat: "Services", desc: "Full-service branch & ATM", suite: "Suite 164" },
-    { name: "The Mail Room", category: "services", cat: "Services", desc: "Shipping, printing & postal", suite: "Suite 166" },
+    // Health & Beauty — coming soon
+    { name: "Salon & Spa", category: "health", cat: "Health & Beauty", desc: "Hair, skincare & wellness", status: "soon" },
+    { name: "Nail Studio", category: "health", cat: "Health & Beauty", desc: "Manicures & pedicures", status: "soon" },
+    { name: "Pharmacy & Wellness", category: "health", cat: "Health & Beauty", desc: "Pharmacy & everyday health", status: "soon" },
+
+    // Services — coming soon
+    { name: "Optical", category: "services", cat: "Services", desc: "Eye exams & eyewear", status: "soon" },
+    { name: "Bank & ATM", category: "services", cat: "Services", desc: "Banking & cash services", status: "soon" },
+    { name: "Mobile Repair", category: "services", cat: "Services", desc: "Phone & device repair", status: "soon" },
   ];
 
   /* category -> logo color (for the lettered logo tiles) */
@@ -70,26 +68,30 @@
     { key: "services", label: "Services" },
   ];
 
-  /* ---- Dining highlights (Dining page cards) ---- */
+  /* ---- Dining highlights (Dining page cards) ----
+     One confirmed tenant + coming-soon concepts. Swap in real
+     restaurants as they're announced.
+  */
   const DINING = [
-    { name: "El Mirador Cantina", cuisine: "Mexican", price: "$$", desc: "Street tacos, house margaritas and the plaza's best riverfront patio.", ph: "ph-5" },
-    { name: "Sora Ramen Bar", cuisine: "Japanese", price: "$$", desc: "Slow-simmered broths, hand-pulled noodles and seasonal small plates.", ph: "ph-1" },
-    { name: "The Catfish Co.", cuisine: "Southern", price: "$$", desc: "Crispy catfish, hushpuppies and comfort plates done right.", ph: "ph-4" },
-    { name: "Pinnacle Pizza", cuisine: "Italian", price: "$$", desc: "Naples-style wood-fired pizza, fresh pasta and Arkansas wines.", ph: "ph-3" },
-    { name: "Delta Roast Coffee", cuisine: "Café", price: "$", desc: "Single-origin coffee, espresso and fresh-baked pastries each morning.", ph: "ph-2" },
-    { name: "Verdure", cuisine: "Healthy", price: "$", desc: "Build-your-own salads, grain bowls and cold-pressed juices.", ph: "ph-6" },
+    { name: "Tacos al Carbon", cuisine: "Mexican", desc: "Authentic tacos grilled al carbon, fresh salsas and house favorites.", ph: "ph-5", status: "open" },
+    { name: "Coffee & Café", cuisine: "Café", desc: "A local coffee and pastry spot to start the morning right.", ph: "ph-2", status: "soon" },
+    { name: "Bakery & Sweets", cuisine: "Bakery", desc: "Fresh-baked breads, cakes and celebration treats.", ph: "ph-6", status: "soon" },
+    { name: "Casual Dining", cuisine: "American", desc: "A relaxed sit-down restaurant for the whole family.", ph: "ph-3", status: "soon" },
+    { name: "Quick Bites", cuisine: "Fast Casual", desc: "Grab-and-go counters for lunch on the move.", ph: "ph-1", status: "soon" },
+    { name: "Sweet Treats", cuisine: "Dessert", desc: "Ice cream, paletas and after-dinner favorites.", ph: "ph-4", status: "soon" },
   ];
 
   /* ---- Events ----
+     Placeholder programming for the plaza's opening season.
      date: ISO date used for sorting + the date chip
   */
   const EVENTS = [
-    { date: "2026-06-12", title: "Riverfront Live: Friday Music Series", time: "6–9 PM", place: "Center Court", desc: "Local bands, food trucks and a golden-hour view of the Arkansas River.", tag: "Live Music" },
-    { date: "2026-06-20", title: "Saturday Farmers Market", time: "8 AM–1 PM", place: "East Promenade", desc: "Arkansas produce, fresh flowers, bakers and makers every Saturday.", tag: "Market" },
-    { date: "2026-07-04", title: "Independence Day Family Festival", time: "4–10 PM", place: "The Plaza", desc: "Lawn games, local vendors and a riverside view of the city fireworks.", tag: "Festival" },
-    { date: "2026-07-18", title: "Sip & Shop Night Market", time: "5–9 PM", place: "Center Court", desc: "Extended shopping hours, local art, live DJ and tastings from our restaurants.", tag: "Night Market" },
-    { date: "2026-08-09", title: "Back-to-School Bash", time: "11 AM–3 PM", place: "Center Court", desc: "Family activities, giveaways and in-store specials to start the year right.", tag: "Family" },
-    { date: "2026-08-23", title: "Makers & Vintage Fair", time: "10 AM–4 PM", place: "East Promenade", desc: "Curated vintage, handmade goods and one-of-a-kind finds from regional sellers.", tag: "Market" },
+    { date: "2026-09-12", title: "Grand Opening Celebration", time: "11 AM–6 PM", place: "Center Court", desc: "Music, family activities and tastings to mark the opening of Plaza La Cima.", tag: "Opening" },
+    { date: "2026-09-26", title: "Saturday Market", time: "9 AM–1 PM", place: "The Promenade", desc: "Local produce, makers and flowers — a new Saturday tradition.", tag: "Market" },
+    { date: "2026-10-10", title: "Fall Family Festival", time: "12–5 PM", place: "Center Court", desc: "Lawn games, vendors and seasonal fun for all ages.", tag: "Festival" },
+    { date: "2026-10-24", title: "Live Music Friday", time: "6–9 PM", place: "Center Court", desc: "Local bands and food from the plaza's restaurants.", tag: "Live Music" },
+    { date: "2026-11-14", title: "Makers & Vintage Fair", time: "10 AM–4 PM", place: "The Promenade", desc: "Handmade goods and one-of-a-kind finds from regional sellers.", tag: "Market" },
+    { date: "2026-12-05", title: "Holiday Night Market", time: "5–9 PM", place: "Center Court", desc: "Extended shopping, holiday lights, treats and live music.", tag: "Night Market" },
   ];
 
   global.PLAZA = { STORES, CAT_COLORS, CATEGORIES, DINING, EVENTS };

@@ -21,21 +21,24 @@
   document.querySelectorAll("[data-dining-grid]").forEach((grid) => {
     const limit = grid.dataset.limit ? parseInt(grid.dataset.limit, 10) : Infinity;
     grid.innerHTML = data.DINING.slice(0, limit)
-      .map(
-        (d, i) => `
+      .map((d, i) => {
+        const isOpen = d.status === "open";
+        const badge = isOpen
+          ? `<span class="badge badge-open">Now open</span>`
+          : `<span class="badge badge-soon">Coming soon</span>`;
+        return `
         <li class="tile" data-reveal style="--reveal-delay:${Math.min(i * 0.06, 0.4)}s">
-          <div class="tile-media ${esc(d.ph)} ph-pattern" role="img" aria-label="${esc(d.name)}"></div>
+          <div class="tile-media ${esc(d.ph)} ph-pattern" role="img" aria-label="${esc(d.name)}">
+            ${isOpen ? '<span class="media-tag">Now open</span>' : ''}
+          </div>
           <div class="tile-body">
             <span class="cat">${esc(d.cuisine)}</span>
             <h3>${esc(d.name)}</h3>
             <p>${esc(d.desc)}</p>
-            <div class="tile-foot">
-              <span class="price">${esc(d.price)}</span>
-              <span>Open daily</span>
-            </div>
+            <div class="tile-foot">${badge}</div>
           </div>
-        </li>`
-      )
+        </li>`;
+      })
       .join("");
   });
 

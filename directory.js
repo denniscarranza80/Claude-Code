@@ -65,13 +65,18 @@
     grid.innerHTML = visible
       .map((s, i) => {
         const color = CAT_COLORS[s.category] || "#15606f";
+        const isOpen = s.status === "open";
+        const logo = isOpen ? initials(s.name) : "✦";
+        const meta = isOpen
+          ? `<span class="badge badge-open">📍 ${esc(s.suite || "Now open")}</span>`
+          : `<span class="badge badge-soon">Coming soon</span>`;
         return `
-        <li class="store-card" style="animation-delay:${Math.min(i * 0.04, 0.4)}s">
-          <span class="store-logo" style="background:${color}">${esc(initials(s.name))}</span>
+        <li class="store-card${isOpen ? " is-open" : ""}" style="animation-delay:${Math.min(i * 0.04, 0.4)}s">
+          <span class="store-logo" style="background:${color}">${esc(logo)}</span>
           <span class="cat">${esc(s.cat)}</span>
           <h3>${esc(s.name)}</h3>
           <p class="desc">${esc(s.desc || "")}</p>
-          <p class="meta">📍 ${esc(s.suite || "")}</p>
+          <p class="meta">${meta}</p>
         </li>`;
       })
       .join("");
