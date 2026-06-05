@@ -1,4 +1,4 @@
-# Riverbend Plaza — Shopping Plaza Website
+# Plaza La Cima — Shopping Plaza Website
 
 A responsive, single-page marketing website for a fictional shopping plaza in
 **Little Rock, Arkansas**. Built with plain HTML, CSS, and JavaScript — no build

@@ -1,4 +1,4 @@
-/* Riverbend Plaza — interactive directory, nav, and form handling */
+/* Plaza La Cima — interactive directory, nav, and form handling */
 (function () {
   "use strict";
 
@@ -22,7 +22,7 @@
     { name: "Clip & Co. Salon", category: "health", cat: "Health & Beauty", meta: "Hair salon · Suite 152" },
     { name: "Polished Nail Bar", category: "health", cat: "Health & Beauty", meta: "Manicures · Suite 154" },
     { name: "Pinnacle Pharmacy", category: "health", cat: "Health & Beauty", meta: "Pharmacy & wellness · Suite 156" },
-    { name: "Riverbend Optical", category: "services", cat: "Services", meta: "Eyewear · Suite 160" },
+    { name: "La Cima Optical", category: "services", cat: "Services", meta: "Eyewear · Suite 160" },
     { name: "QuickFix Mobile", category: "services", cat: "Services", meta: "Phone repair · Suite 162" },
     { name: "First Arkansas Bank", category: "services", cat: "Services", meta: "ATM & branch · Suite 164" },
     { name: "The Mail Room", category: "services", cat: "Services", meta: "Shipping & postal · Suite 166" },
