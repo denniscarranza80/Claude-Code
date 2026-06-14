@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview · Plaza La Cima website</title>
+  <style>
+    :root {
+      --teal-900: #0c3a46;
+      --teal-800: #0f4c5c;
+      --teal-700: #14606f;
+      --gold: #c8a96a;
+      --gold-300: #e6d3a8;
+      --cream: #faf6ef;
+      --line: rgba(255,255,255,0.14);
+      --bar-h: 60px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(900px 500px at 100% -10%, rgba(200,169,106,.18), transparent 60%),
+        linear-gradient(160deg, #0c3a46, #0a2c35);
+      color: #eaf3f4;
+      min-height: 100%;
+    }
+
+    /* Top bar */
+    .bar {
+      height: var(--bar-h);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1.1rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8,32,39,.7);
+      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .mark {
+      width: 30px; height: 30px; flex: none; border-radius: 8px;
+      display: grid; place-items: center;
+      background: linear-gradient(150deg, var(--teal-700), var(--teal-900));
+      color: var(--gold-300);
+    }
+    .mark svg { width: 17px; height: 17px; }
+    .brand small { display: block; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-300); font-weight: 600; }
+
+    .spacer { flex: 1; }
+
+    .seg { display: inline-flex; background: rgba(255,255,255,.07); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+    .seg button {
+      font: inherit; font-size: .85rem; font-weight: 600;
+      color: #cfe2e5; background: transparent; border: 0; cursor: pointer;
+      padding: .4rem .85rem; border-radius: 999px; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .seg button.active { background: var(--gold); color: var(--teal-900); }
+
+    .open-link {
+      font-size: .85rem; font-weight: 600; color: var(--teal-900);
+      background: var(--gold); padding: .5rem .9rem; border-radius: 999px;
+      text-decoration: none; white-space: nowrap;
+    }
+    .open-link:hover { background: var(--gold-300); }
+
+    /* Layout: page tabs + stage */
+    .wrap { display: flex; min-height: calc(100vh - var(--bar-h)); }
+
+    nav.tabs {
+      width: 190px; flex: none; padding: 1rem .8rem; border-right: 1px solid var(--line);
+      display: flex; flex-direction: column; gap: .3rem;
+    }
+    nav.tabs .label { font-size: .68rem; text-transform: uppercase; letter-spacing: .16em; color: #8fb0b5; padding: .3rem .6rem .5rem; }
+    nav.tabs button {
+      font: inherit; text-align: left; font-size: .95rem; font-weight: 500;
+      color: #dbeaec; background: transparent; border: 0; cursor: pointer;
+      padding: .6rem .75rem; border-radius: 10px; display: flex; align-items: center; gap: .6rem;
+      transition: background .15s ease, color .15s ease;
+    }
+    nav.tabs button:hover { background: rgba(255,255,255,.06); }
+    nav.tabs button.active { background: var(--gold); color: var(--teal-900); font-weight: 600; }
+    nav.tabs .dot { font-size: 1rem; }
+
+    /* Stage */
+    .stage {
+      flex: 1; display: grid; place-items: start center;
+      padding: 1.5rem; overflow: auto;
+    }
+    .device {
+      width: 100%;
+      max-width: 1280px;
+      background: var(--cream);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: max-width .35s cubic-bezier(.22,1,.36,1);
+    }
+    .device.mobile { max-width: 390px; border-radius: 28px; padding: 10px; background: #11333c; }
+    .device.tablet { max-width: 834px; }
+    .device .screen { width: 100%; height: calc(100vh - var(--bar-h) - 3rem); background: var(--cream); border-radius: 8px; overflow: hidden; }
+    .device.mobile .screen { height: calc(100vh - var(--bar-h) - 3rem - 20px); border-radius: 20px; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; background: var(--cream); }
+
+    .hint {
+      margin-top: 1rem; font-size: .8rem; color: #9cbcc1; text-align: center; max-width: 640px;
+      line-height: 1.5;
+    }
+    .hint code { background: rgba(255,255,255,.08); padding: .1rem .4rem; border-radius: 5px; color: #eaf3f4; }
+
+    @media (max-width: 720px) {
+      nav.tabs { display: none; }
+      .brand small { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+      </span>
+      <span>Plaza La Cima<small>Website preview</small></span>
+    </span>
+
+    <span class="spacer"></span>
+
+    <div class="seg" role="group" aria-label="Device size">
+      <button data-device="desktop" class="active">🖥️ Desktop</button>
+      <button data-device="tablet">⊟ Tablet</button>
+      <button data-device="mobile">📱 Mobile</button>
+    </div>
+
+    <a class="open-link" id="open-new" href="index.html" target="_blank" rel="noopener">Open full page ↗</a>
+  </div>
+
+  <div class="wrap">
+    <nav class="tabs" aria-label="Pages">
+      <span class="label">Pages</span>
+      <button data-page="index.html" class="active"><span class="dot">🏠</span> Home</button>
+      <button data-page="stores.html"><span class="dot">🛍️</span> Stores</button>
+      <button data-page="dining.html"><span class="dot">🍽️</span> Dining</button>
+      <button data-page="events.html"><span class="dot">🎉</span> Events</button>
+      <button data-page="visit.html"><span class="dot">📍</span> Visit</button>
+      <button data-page="leasing.html"><span class="dot">🔑</span> Leasing</button>
+    </nav>
+
+    <div class="stage">
+      <div class="device" id="device">
+        <div class="screen">
+          <iframe id="frame" src="index.html" title="Plaza La Cima preview" loading="eager"></iframe>
+        </div>
+      </div>
+      <p class="hint">
+        Tip: for the most reliable preview (iframes + fonts), run a local server from this folder —
+        <code>python3 -m http.server 8000</code> — then open <code>http://localhost:8000/preview.html</code>.
+        Use “Open full page” to view any page on its own.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var frame = document.getElementById("frame");
+      var device = document.getElementById("device");
+      var openNew = document.getElementById("open-new");
+      var pageBtns = document.querySelectorAll("nav.tabs button");
+      var devBtns = document.querySelectorAll(".seg button");
+
+      function setActive(list, el) {
+        list.forEach(function (b) { b.classList.remove("active"); });
+        el.classList.add("active");
+      }
+
+      pageBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var page = btn.dataset.page;
+          frame.src = page;
+          openNew.href = page;
+          setActive(pageBtns, btn);
+        });
+      });
+
+      devBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          device.classList.remove("mobile", "tablet");
+          if (btn.dataset.device === "mobile") device.classList.add("mobile");
+          if (btn.dataset.device === "tablet") device.classList.add("tablet");
+          setActive(devBtns, btn);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
