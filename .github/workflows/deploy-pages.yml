@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 
-# Publishes the static site (repo root, no build step) to GitHub Pages.
-# One-time setup: Repo Settings → Pages → Source: "GitHub Actions".
+# Manual-only. The site is intentionally kept private/offline while it's still
+# being designed, so auto-deploy on push is disabled — pushing changes will NOT
+# publish anything. To publish later, re-enable Pages (Repo Settings → Pages →
+# Source: "GitHub Actions") and run this workflow by hand from the Actions tab.
 on:
-  push:
-    branches: ["claude/plaza-la-cima-website-eUf71"]
   workflow_dispatch:
 
 permissions:
