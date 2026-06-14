@@ -463,26 +463,6 @@ p { color: var(--ink-soft); }
 .highlight p { font-size: 0.95rem; }
 
 /* ============================================================
-   Showcase image (home)
-   ============================================================ */
-.showcase { padding-top: clamp(0.5rem, 2vw, 1.5rem); }
-.showcase-figure {
-  position: relative;
-  margin: 0;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--line);
-}
-.showcase-figure img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-
-/* ============================================================
    Split feature blocks (home teasers)
    ============================================================ */
 .split {
