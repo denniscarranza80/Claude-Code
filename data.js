@@ -33,9 +33,9 @@
     {
       name: "Tacos al Carbon",
       category: "dining", cat: "Dining",
-      desc: "Authentic Mexican tacos grilled al carbon, fresh salsas & house favorites.",
+      desc: "Authentic Mexican tacos grilled al carbon, fresh salsas & house favorites — plus fresh hand-made gelato and custom-brewed espresso drinks made to order.",
       suite: "Now open", status: "open",
-      img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+      img: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80"
     },
 
     // Coming soon tenants
@@ -99,7 +99,7 @@
      restaurants as they're announced.
   */
   const DINING = [
-    { name: "Tacos al Carbon", cuisine: "Mexican", desc: "Authentic tacos grilled al carbon, fresh salsas and house favorites.", ph: "ph-5", status: "open" },
+    { name: "Tacos al Carbon", cuisine: "Mexican", desc: "Authentic tacos grilled al carbon, fresh salsas and house favorites — plus fresh hand-made gelato and custom-brewed espresso drinks made to order.", ph: "ph-5", status: "open" },
     { name: "Coffee & Café", cuisine: "Café", desc: "A local coffee and pastry spot to start the morning right.", ph: "ph-2", status: "soon" },
     { name: "Bakery & Sweets", cuisine: "Bakery", desc: "Fresh-baked breads, cakes and celebration treats.", ph: "ph-6", status: "soon" },
     { name: "Casual Dining", cuisine: "American", desc: "A relaxed sit-down restaurant for the whole family.", ph: "ph-3", status: "soon" },
