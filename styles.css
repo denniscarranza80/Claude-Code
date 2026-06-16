@@ -189,8 +189,9 @@ p { color: var(--ink-soft); }
 .btn-primary { --btn-bg: var(--teal-800); }
 .btn-primary:hover { background: var(--teal-700); }
 
-.btn-gold { --btn-bg: var(--gold-500); --btn-fg: var(--teal-900); }
-.btn-gold:hover { background: var(--gold-300); }
+.btn-gold { --btn-bg: var(--gold-500); --btn-fg: var(--teal-900); color: var(--teal-900); }
+.btn-gold:hover { background: var(--gold-300); color: var(--teal-900); }
+.btn-gold:active { background: var(--gold-500); color: var(--teal-900); }
 
 .btn-ghost {
   background: transparent;
