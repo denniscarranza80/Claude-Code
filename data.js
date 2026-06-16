@@ -20,22 +20,22 @@
      status   : "open" (confirmed) | "soon" (coming soon)
   */
   const STORES = [
+    // Anchor tenant — featured & highlighted (renders full-width, on top)
+    {
+      name: "La Cima Laundromat",
+      category: "services", cat: "Services",
+      desc: "Modern full-service laundromat with self-service machines, wash-dry-fold, free WiFi & a comfortable lounge.",
+      status: "soon", featured: true,
+      img: "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=800&q=80"
+    },
+
     // Confirmed open
     {
       name: "Tacos al Carbon",
       category: "dining", cat: "Dining",
       desc: "Authentic Mexican tacos grilled al carbon, fresh salsas & house favorites.",
       suite: "Now open", status: "open",
-      img: "https://picsum.photos/seed/tacos-carbon-lr/600/380"
-    },
-
-    // Anchor tenant — featured & highlighted
-    {
-      name: "La Cima Laundromat",
-      category: "services", cat: "Services",
-      desc: "Modern full-service laundromat with self-service machines, wash-dry-fold, free WiFi & a comfortable lounge.",
-      status: "soon", featured: true,
-      img: "https://picsum.photos/seed/cima-laundromat/600/380"
+      img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
     },
 
     // Coming soon tenants
@@ -44,21 +44,21 @@
       category: "dining", cat: "Dining",
       desc: "Southern-style chicken & waffles — name & details to be announced.",
       status: "soon",
-      img: "https://picsum.photos/seed/chicken-waffles-plaza/600/380"
+      img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80"
     },
     {
       name: "Jewelry Store",
       category: "fashion", cat: "Fashion & Accessories",
       desc: "Fine jewelry, gifts & custom pieces.",
       status: "soon",
-      img: "https://picsum.photos/seed/jewelry-plaza-lr/600/380"
+      img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80"
     },
     {
       name: "Massage Parlor",
       category: "health", cat: "Health & Wellness",
       desc: "Relaxation & therapeutic massage services.",
       status: "soon",
-      img: "https://picsum.photos/seed/massage-wellness-lr/600/380"
+      img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80"
     },
 
     // Available for lease
