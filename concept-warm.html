@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Plaza La Cima — Concept B · Warm Market</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#2a1c14;--ink-soft:#5c4838;--muted:#94806f;
+  --cream:#fbf3e6;--paper:#fff;--line:#ecdcc2;
+  --terra:#c0532f;--terra-d:#9a3f22;--gold:#e0a23c;--gold-d:#c8893f;
+  --teal:#15706b;--plum:#7a3b53;
+  --serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);--gutter:clamp(1.25rem,5vw,4rem);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img,svg{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.04;letter-spacing:-.015em}
+.ribbon{background:var(--terra);color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:.5rem;font-weight:600}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s var(--ease),box-shadow .4s}
+.hdr.solid{background:rgba(251,243,230,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--terra-d)}
+.logo svg{width:26px;height:26px;color:var(--gold-d)}
+.nav{display:flex;gap:1.9rem;align-items:center}
+.nav a{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.nav a:hover{color:var(--terra)}
+.nav .book{background:var(--terra);color:#fff;padding:.55rem 1.1rem;border-radius:999px}
+.nav .book:hover{background:var(--terra-d);color:#fff}
+@media(max-width:820px){.nav a:not(.book){display:none}}
+
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;overflow:hidden;padding:8rem 1.25rem 4rem;color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(900px 500px at 80% 10%,rgba(224,162,60,.55),transparent 55%),
+  radial-gradient(800px 600px at 10% 100%,rgba(122,59,83,.5),transparent 60%),
+  linear-gradient(155deg,#c0532f,#9a3f22 65%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,20,10,.25),rgba(60,20,10,.55))}
+.festoon{position:absolute;top:84px;left:0;right:0;z-index:1;height:60px;opacity:.9}
+.note{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);z-index:2;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);border:1px dashed rgba(255,255,255,.45);padding:.3rem .7rem;border-radius:999px}
+.hero-inner{position:relative;z-index:2;max-width:880px}
+.hero .eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:700}
+.hero h1{font-size:clamp(2.8rem,1.5rem+6vw,7rem);font-weight:700;color:#fff;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--gold);font-weight:600}
+.hero .sub{margin:1.4rem auto 0;max-width:560px;font-size:1.12rem;color:rgba(255,255,255,.92)}
+.actions{display:flex;gap:.9rem;justify-content:center;margin-top:2.2rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:1rem 1.9rem;border-radius:999px;font-size:.82rem;letter-spacing:.06em;font-weight:700;transition:.25s var(--ease)}
+.btn-gold{background:var(--gold);color:var(--terra-d)}.btn-gold:hover{background:#f2c163;transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff}.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+section{padding-block:clamp(3.5rem,8vw,7.5rem)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.statement{text-align:center;max-width:860px;margin-inline:auto}
+.statement .eyebrow{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1.2rem;font-weight:700}
+.statement p{font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,1rem+1.8vw,2.4rem);line-height:1.3}
+.statement em{font-style:italic;color:var(--terra)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split.alt .media{order:2}
+.media{position:relative;aspect-ratio:5/4;overflow:hidden;border-radius:20px;box-shadow:0 26px 60px rgba(154,63,34,.22)}
+.media .fill{position:absolute;inset:0;transition:transform 1.3s var(--ease)}.media:hover .fill{transform:scale(1.05)}
+.p1{background:linear-gradient(150deg,#e0a23c,#c0532f)}
+.p2{background:linear-gradient(150deg,#15706b,#0c3a46)}
+.tag{position:absolute;left:1rem;bottom:1rem;background:rgba(42,28,20,.78);color:#fff;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .8rem;border-radius:999px}
+.copy .eyebrow{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);margin-bottom:.9rem;font-weight:700}
+.copy h2{font-size:clamp(1.9rem,1.2rem+2.4vw,3.2rem);margin-bottom:1.1rem}
+.copy p{color:var(--ink-soft);margin-bottom:1.4rem;max-width:46ch}
+.lnk{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--terra);border-bottom:2px solid var(--gold);padding-bottom:.25rem}
+@media(max-width:820px){.split,.split.alt{grid-template-columns:1fr}.split.alt .media{order:0}.media{aspect-ratio:16/10}}
+
+.tenants{background:var(--terra-d);color:#fff;border-radius:28px;margin:0 var(--gutter)}
+.tenants .in{padding:clamp(3rem,6vw,5rem) clamp(1.25rem,4vw,3rem);text-align:center}
+.tenants .eyebrow{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;font-weight:700}
+.tenants h2{color:#fff;font-size:clamp(1.9rem,1.2rem+2vw,2.9rem);margin-bottom:2.6rem}
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.tcell{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:1.8rem 1.1rem;border-radius:16px}
+.tcell .nm{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin-bottom:.35rem}
+.tcell .ct{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.tcell.open{background:linear-gradient(150deg,#e0a23c,#c8893f)}
+.tcell.open .nm,.tcell.open .ct{color:#3a1c0e}
+.tcell .badge{display:inline-block;margin-top:.8rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;background:#3a1c0e;color:var(--gold);padding:.25rem .6rem;border-radius:999px;font-weight:700}
+@media(max-width:820px){.tg{grid-template-columns:1fr 1fr}}
+
+.cta{text-align:center}
+.cta .eyebrow{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1rem;font-weight:700}
+.cta h2{font-size:clamp(2rem,1.3rem+2.6vw,3.4rem);margin-bottom:1.1rem}
+.cta p{color:var(--ink-soft);max-width:520px;margin:0 auto 2rem}
+footer{text-align:center;padding:3rem 1rem;color:var(--muted);font-size:.85rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="ribbon">Concept B · Warm Market — placeholder photos</div>
+<header class="hdr" id="hdr"><div class="wrap hdr-in">
+  <a class="logo" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>Plaza La Cima</a>
+  <nav class="nav"><a href="stores.html">Stores</a><a href="dining.html">Dining</a><a href="events.html">Events</a><a href="visit.html">Visit</a><a class="book" href="leasing.html">Leasing</a></nav>
+</div></header>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <svg class="festoon" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,8 C360,52 1080,52 1440,8" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+    <g fill="#ffe6a6">
+      <circle cx="120" cy="30" r="4"/><circle cx="300" cy="42" r="4"/><circle cx="480" cy="48" r="4"/><circle cx="660" cy="50" r="4"/><circle cx="780" cy="50" r="4"/><circle cx="960" cy="48" r="4"/><circle cx="1140" cy="42" r="4"/><circle cx="1320" cy="30" r="4"/>
+    </g>
+  </svg>
+  <span class="note">Full-bleed hero photo goes here</span>
+  <div class="hero-inner">
+    <p class="eyebrow">¡Bienvenidos! · Stagecoach Road, Little Rock</p>
+    <h1>Plaza <em>La Cima</em></h1>
+    <p class="sub">Where Little Rock comes to shop, eat &amp; celebrate — starting with the flavors of Tacos al Carbon.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="dining.html">Taste the plaza</a>
+      <a class="btn btn-ghost" href="visit.html">Plan a visit</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap statement reveal">
+  <p class="eyebrow">Welcome</p>
+  <p>More than a shopping center — a <em>gathering place</em>. Plaza La Cima brings together great food, local shops, and the warmth of community on Stagecoach Road.</p>
+</section>
+
+<section class="wrap"><div class="split reveal">
+  <div class="media"><div class="fill p1"></div><span class="tag">Photo — dining</span></div>
+  <div class="copy"><p class="eyebrow">Eat &amp; drink</p><h2>Flavor, first</h2><p>Tacos al Carbon leads the way with authentic tacos grilled al carbon — and a café, bakery, and more are on the way.</p><a class="lnk" href="dining.html">Explore dining</a></div>
+</div></section>
+
+<section class="wrap"><div class="split alt reveal">
+  <div class="media"><div class="fill p2"></div><span class="tag">Photo — events</span></div>
+  <div class="copy"><p class="eyebrow">Celebrate</p><h2>Always something on</h2><p>Live music, weekend markets, and family festivals under the string lights — there's always a reason to gather.</p><a class="lnk" href="events.html">See what's on</a></div>
+</div></section>
+
+<section class="reveal"><div class="tenants"><div class="in">
+  <p class="eyebrow">The directory</p><h2>Now open &amp; coming soon</h2>
+  <div class="tg">
+    <div class="tcell open"><div class="nm">Tacos al Carbon</div><div class="ct">Dining</div><span class="badge">Now open</span></div>
+    <div class="tcell"><div class="nm">Coffee &amp; Café</div><div class="ct">Coming soon</div></div>
+    <div class="tcell"><div class="nm">Boutique</div><div class="ct">Coming soon</div></div>
+    <div class="tcell"><div class="nm">Salon &amp; Spa</div><div class="ct">Coming soon</div></div>
+  </div>
+</div></div></section>
+
+<section class="wrap cta reveal">
+  <p class="eyebrow">Leasing</p><h2>Become a founding tenant</h2>
+  <p>Flexible spaces from 600 to 8,000 sq ft are available now. Join Tacos al Carbon and the businesses moving in next.</p>
+  <a class="btn btn-gold" href="leasing.html">Request leasing info →</a>
+</section>
+
+<footer>11800 Stagecoach Road, Little Rock, AR 72210 · Style concept for review</footer>
+<script>
+var hdr=document.getElementById('hdr');var s=function(){hdr.classList.toggle('solid',scrollY>window.innerHeight*0.7)};s();addEventListener('scroll',s,{passive:true});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
