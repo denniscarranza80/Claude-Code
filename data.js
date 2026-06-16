@@ -20,52 +20,78 @@
      status   : "open" (confirmed) | "soon" (coming soon)
   */
   const STORES = [
-    // Confirmed tenant
-    { name: "Tacos al Carbon", category: "dining", cat: "Dining", desc: "Authentic Mexican tacos, grilled al carbon", suite: "Now open", status: "open" },
+    // Confirmed open
+    {
+      name: "Tacos al Carbon",
+      category: "dining", cat: "Dining",
+      desc: "Authentic Mexican tacos grilled al carbon, fresh salsas & house favorites.",
+      suite: "Now open", status: "open",
+      img: "https://picsum.photos/seed/tacos-carbon-lr/600/380"
+    },
 
-    // Fashion & Apparel — coming soon
-    { name: "Women's Boutique", category: "fashion", cat: "Fashion", desc: "Apparel & accessories", status: "soon" },
-    { name: "Menswear", category: "fashion", cat: "Fashion", desc: "Tailored & casual wear", status: "soon" },
-    { name: "Shoes & Accessories", category: "fashion", cat: "Fashion", desc: "Footwear for the family", status: "soon" },
-    { name: "Kids' Apparel", category: "fashion", cat: "Fashion", desc: "Children's clothing & shoes", status: "soon" },
+    // Anchor tenant — featured & highlighted
+    {
+      name: "La Cima Laundromat",
+      category: "services", cat: "Services",
+      desc: "Modern full-service laundromat with self-service machines, wash-dry-fold, free WiFi & a comfortable lounge.",
+      status: "soon", featured: true,
+      img: "https://picsum.photos/seed/cima-laundromat/600/380"
+    },
 
-    // Dining — coming soon
-    { name: "Coffee & Café", category: "dining", cat: "Dining", desc: "Locally roasted coffee & pastries", status: "soon" },
-    { name: "Bakery & Sweets", category: "dining", cat: "Dining", desc: "Cakes, cookies & treats", status: "soon" },
-    { name: "Casual Dining", category: "dining", cat: "Dining", desc: "Family restaurant & patio", status: "soon" },
+    // Coming soon tenants
+    {
+      name: "Chicken & Waffles",
+      category: "dining", cat: "Dining",
+      desc: "Southern-style chicken & waffles — name & details to be announced.",
+      status: "soon",
+      img: "https://picsum.photos/seed/chicken-waffles-plaza/600/380"
+    },
+    {
+      name: "Jewelry Store",
+      category: "fashion", cat: "Fashion & Accessories",
+      desc: "Fine jewelry, gifts & custom pieces.",
+      status: "soon",
+      img: "https://picsum.photos/seed/jewelry-plaza-lr/600/380"
+    },
+    {
+      name: "Massage Parlor",
+      category: "health", cat: "Health & Wellness",
+      desc: "Relaxation & therapeutic massage services.",
+      status: "soon",
+      img: "https://picsum.photos/seed/massage-wellness-lr/600/380"
+    },
 
-    // Home & Gifts — coming soon
-    { name: "Home & Decor", category: "home", cat: "Home & Gifts", desc: "Furnishings & home goods", status: "soon" },
-    { name: "Gifts & Stationery", category: "home", cat: "Home & Gifts", desc: "Cards, candles & gifts", status: "soon" },
-    { name: "Florist", category: "home", cat: "Home & Gifts", desc: "Fresh flowers & arrangements", status: "soon" },
-
-    // Health & Beauty — coming soon
-    { name: "Salon & Spa", category: "health", cat: "Health & Beauty", desc: "Hair, skincare & wellness", status: "soon" },
-    { name: "Nail Studio", category: "health", cat: "Health & Beauty", desc: "Manicures & pedicures", status: "soon" },
-    { name: "Pharmacy & Wellness", category: "health", cat: "Health & Beauty", desc: "Pharmacy & everyday health", status: "soon" },
-
-    // Services — coming soon
-    { name: "Optical", category: "services", cat: "Services", desc: "Eye exams & eyewear", status: "soon" },
-    { name: "Bank & ATM", category: "services", cat: "Services", desc: "Banking & cash services", status: "soon" },
-    { name: "Mobile Repair", category: "services", cat: "Services", desc: "Phone & device repair", status: "soon" },
+    // Available for lease
+    {
+      name: "Your Business Here",
+      category: "leasing", cat: "Now Leasing",
+      desc: "Prime retail space available — flexible sizes from 600 to 8,000 sq ft on Stagecoach Road.",
+      status: "available"
+    },
+    {
+      name: "Your Business Here",
+      category: "leasing", cat: "Now Leasing",
+      desc: "Join Tacos al Carbon and our growing family of Plaza La Cima tenants.",
+      status: "available"
+    },
   ];
 
   /* category -> logo color (for the lettered logo tiles) */
   const CAT_COLORS = {
-    fashion: "#15606f",
-    dining: "#c8893f",
-    home: "#0f4c5c",
-    health: "#2f8f6b",
-    services: "#5a6b70",
+    dining:   "#c8893f",
+    services: "#15606f",
+    fashion:  "#7a4f8b",
+    health:   "#2f8f6b",
+    leasing:  "#9aabb0",
   };
 
   /* Filter chips, in order. "all" is added automatically by the UI. */
   const CATEGORIES = [
-    { key: "fashion", label: "Fashion" },
-    { key: "dining", label: "Dining" },
-    { key: "home", label: "Home & Gifts" },
-    { key: "health", label: "Health & Beauty" },
+    { key: "dining",   label: "Dining" },
     { key: "services", label: "Services" },
+    { key: "fashion",  label: "Fashion" },
+    { key: "health",   label: "Health & Wellness" },
+    { key: "leasing",  label: "Now Leasing" },
   ];
 
   /* ---- Dining highlights (Dining page cards) ----

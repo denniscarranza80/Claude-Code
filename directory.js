@@ -65,19 +65,46 @@
     grid.innerHTML = visible
       .map((s, i) => {
         const color = CAT_COLORS[s.category] || "#15606f";
-        const isOpen = s.status === "open";
-        const logo = isOpen ? initials(s.name) : "✦";
-        const meta = isOpen
-          ? `<span class="badge badge-open">📍 ${esc(s.suite || "Now open")}</span>`
-          : `<span class="badge badge-soon">Coming soon</span>`;
-        return `
-        <li class="store-card${isOpen ? " is-open" : ""}" style="animation-delay:${Math.min(i * 0.04, 0.4)}s">
-          <span class="store-logo" style="background:${color}">${esc(logo)}</span>
-          <span class="cat">${esc(s.cat)}</span>
-          <h3>${esc(s.name)}</h3>
-          <p class="desc">${esc(s.desc || "")}</p>
-          <p class="meta">${meta}</p>
-        </li>`;
+        const isOpen      = s.status === "open";
+        const isFeatured  = s.featured === true;
+        const isAvailable = s.status === "available";
+
+        /* Badge / CTA */
+        let meta;
+        if (isOpen) {
+          meta = `<span class="badge badge-open">📍 ${esc(s.suite || "Now open")}</span>`;
+        } else if (isFeatured) {
+          meta = `<span class="badge badge-featured">★ Anchor tenant · Coming soon</span>`;
+        } else if (isAvailable) {
+          meta = `<a href="leasing.html" class="btn btn-gold" style="font-size:.75rem;padding:.45rem 1rem;margin-top:.25rem">Inquire about space →</a>`;
+        } else {
+          meta = `<span class="badge badge-soon">Coming soon</span>`;
+        }
+
+        /* Top image vs. letter avatar */
+        const imgHtml = s.img
+          ? `<div class="store-card-img"><img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy"/></div>`
+          : `<span class="store-logo" style="background:${color}">${esc(isOpen ? initials(s.name) : isAvailable ? "+" : "✦")}</span>`;
+
+        /* CSS classes */
+        const cls = ["store-card", isOpen ? "is-open" : "", isFeatured ? "is-featured" : "", isAvailable ? "is-available" : ""]
+          .filter(Boolean).join(" ");
+
+        /* Featured gets a copy-wrapper so image & text sit side-by-side */
+        const inner = isFeatured
+          ? `${imgHtml}<div class="store-card-copy">
+              <span class="cat">${esc(s.cat)}</span>
+              <h3>${esc(s.name)}</h3>
+              <p class="desc">${esc(s.desc || "")}</p>
+              <p class="meta">${meta}</p>
+            </div>`
+          : `${imgHtml}
+            <span class="cat">${esc(s.cat)}</span>
+            <h3>${esc(s.name)}</h3>
+            <p class="desc">${esc(s.desc || "")}</p>
+            <p class="meta">${meta}</p>`;
+
+        return `<li class="${cls}" style="animation-delay:${Math.min(i * 0.04, 0.4)}s">${inner}</li>`;
       })
       .join("");
 
