@@ -26,11 +26,13 @@
         const badge = isOpen
           ? `<span class="badge badge-open">Now open</span>`
           : `<span class="badge badge-soon">Coming soon</span>`;
+        const tag = isOpen ? '<span class="media-tag">Now open</span>' : '';
+        const media = d.img
+          ? `<div class="tile-media${d.promo ? " is-promo" : ""}"><img src="${esc(d.img)}" alt="${esc(d.name)}" loading="lazy"/>${tag}</div>`
+          : `<div class="tile-media ${esc(d.ph || "")} ph-pattern" role="img" aria-label="${esc(d.name)}">${tag}</div>`;
         return `
         <li class="tile" data-reveal style="--reveal-delay:${Math.min(i * 0.06, 0.4)}s">
-          <div class="tile-media ${esc(d.ph)} ph-pattern" role="img" aria-label="${esc(d.name)}">
-            ${isOpen ? '<span class="media-tag">Now open</span>' : ''}
-          </div>
+          ${media}
           <div class="tile-body">
             <span class="cat">${esc(d.cuisine)}</span>
             <h3>${esc(d.name)}</h3>

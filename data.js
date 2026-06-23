@@ -100,6 +100,7 @@
   */
   const DINING = [
     { name: "Tacos al Carbon", cuisine: "Mexican", desc: "Authentic tacos grilled al carbon, fresh salsas and house favorites — plus fresh hand-made gelato and custom-brewed espresso drinks made to order.", ph: "ph-5", status: "open" },
+    { name: "Chicken & Waffles", cuisine: "Southern", desc: "Crispy, golden, irresistible Southern-style chicken & waffles. Made for you — coming soon.", img: "assets/chicken-waffles.jpg", promo: true, status: "soon" },
     { name: "Coffee & Café", cuisine: "Café", desc: "A local coffee and pastry spot to start the morning right.", ph: "ph-2", status: "soon" },
     { name: "Bakery & Sweets", cuisine: "Bakery", desc: "Fresh-baked breads, cakes and celebration treats.", ph: "ph-6", status: "soon" },
     { name: "Casual Dining", cuisine: "American", desc: "A relaxed sit-down restaurant for the whole family.", ph: "ph-3", status: "soon" },
