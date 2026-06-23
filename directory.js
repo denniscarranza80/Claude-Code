@@ -83,7 +83,7 @@
 
         /* Top image vs. letter avatar */
         const imgHtml = s.img
-          ? `<div class="store-card-img"><img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy"/></div>`
+          ? `<div class="store-card-img${s.promo ? " is-promo" : ""}"><img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy"/></div>`
           : `<span class="store-logo" style="background:${color}">${esc(isOpen ? initials(s.name) : isAvailable ? "+" : "✦")}</span>`;
 
         /* CSS classes */

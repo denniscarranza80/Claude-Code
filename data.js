@@ -42,9 +42,9 @@
     {
       name: "Chicken & Waffles",
       category: "dining", cat: "Dining",
-      desc: "Southern-style chicken & waffles — name & details to be announced.",
+      desc: "Southern-style chicken & waffles — crispy, golden, irresistible. Coming soon.",
       status: "soon",
-      img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80"
+      img: "assets/chicken-waffles.jpg", promo: true
     },
     {
       name: "Jewelry Store",

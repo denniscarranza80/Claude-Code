@@ -679,6 +679,15 @@ p { color: var(--ink-soft); }
 }
 .store-card:hover .store-card-img img { transform: scale(1.06); }
 
+/* Promo banner image (designed graphic with baked-in text) — show in full,
+   matching the banner's ratio so nothing is cropped */
+.store-card-img.is-promo {
+  height: auto;
+  aspect-ratio: 5 / 4;
+  background: #211c17;
+}
+.store-card-img.is-promo img { object-fit: cover; }
+
 /* Open card */
 .store-card.is-open { border-color: var(--gold-300); }
 
