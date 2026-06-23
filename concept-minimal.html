@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Plaza La Cima — Concept C · Modern Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --black:#0d0d0d;--ink:#141414;--mid:#5a5a5a;--dim:#9a9a9a;
+  --white:#ffffff;--off:#f7f6f4;--line:#e4e2dd;
+  --accent:#c44b2b;--accent-d:#a83920;--sand:#d4b896;
+  --serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);--gutter:clamp(1.25rem,5vw,5rem);
+  --r:0px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img,svg{display:block;max-width:100%}
+h1,h2{font-family:var(--serif);font-weight:300;line-height:1.02;letter-spacing:-.02em}
+h3{font-weight:500}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:rgba(255,255,255,.55);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:.45rem;font-weight:500}
+
+/* header */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s var(--ease),border-color .35s}
+.hdr.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1340px;margin-inline:auto;padding-inline:var(--gutter)}
+.logo{font-family:var(--serif);font-size:1.05rem;font-weight:300;letter-spacing:.04em;color:var(--ink)}
+.logo em{font-style:italic;color:var(--accent)}
+.nav{display:flex;gap:2.4rem;align-items:center}
+.nav a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);font-weight:500}
+.nav a:hover{color:var(--ink)}
+.nav .book{background:var(--ink);color:var(--white);padding:.5rem 1.2rem;font-size:.7rem}
+.nav .book:hover{background:var(--accent)}
+@media(max-width:820px){.nav a:not(.book){display:none}}
+
+/* hero — asymmetric grid */
+.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:calc(72px + 5rem) var(--gutter) 5rem;background:var(--white)}
+.hero-right{position:relative;overflow:hidden;background:var(--black)}
+.hero-right-fill{position:absolute;inset:0;background:linear-gradient(180deg,#1a0e08,#2e1509 50%,#0a0604);transition:transform 1.8s var(--ease)}
+.hero-right-fill:hover{transform:scale(1.04)}
+.hero-ph{position:absolute;bottom:2rem;right:2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);border:1px dashed rgba(255,255,255,.25);padding:.3rem .65rem}
+.hero-num{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:2.4rem;font-weight:500}
+.hero h1{font-size:clamp(3.5rem,2rem+5.5vw,8rem);color:var(--ink);margin-bottom:1.8rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .sub{max-width:42ch;color:var(--mid);font-size:1rem;font-weight:300;line-height:1.7;margin-bottom:2.6rem}
+.actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.85rem 1.6rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:.22s var(--ease)}
+.btn-ink{background:var(--ink);color:var(--white)}.btn-ink:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--line);color:var(--ink)}.btn-outline:hover{border-color:var(--ink)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:55vw;min-height:240px}.hero-left{padding:calc(72px + 3rem) var(--gutter) 3rem}}
+
+/* marquee bar */
+.marquee-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.9rem 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:0;animation:scroll 22s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee-track span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);padding:0 2.6rem;font-weight:500}
+.marquee-track em{color:var(--accent);font-style:normal}
+
+/* sections */
+section.padded{padding-block:clamp(4rem,9vw,9rem)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* statement */
+.stmt{max-width:1040px;margin-inline:auto;padding-inline:var(--gutter)}
+.stmt-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:3.5rem}
+.stmt-label{writing-mode:vertical-rl;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);font-weight:500;transform:rotate(180deg)}
+.stmt h2{font-size:clamp(2rem,1.2rem+3vw,4rem);max-width:28ch}
+.stmt-rule{height:1px;background:var(--line)}
+.stmt-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem}
+.stmt-tag{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:500}
+.stmt-lnk{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;border-bottom:1px solid currentColor;padding-bottom:.15rem}
+
+/* feature grid — asymmetric 3-col */
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:1px;background:var(--line)}
+.fg-cell{background:var(--white);position:relative;overflow:hidden}
+.fg-cell.tall{grid-row:span 2}
+.fg-fill{position:absolute;inset:0;transition:transform 1.4s var(--ease)}
+.fg-cell:hover .fg-fill{transform:scale(1.05)}
+.fg-ph{height:100%;min-height:280px;background:linear-gradient(160deg,#1a1008,#2e1a0a)}
+.fg-ph2{height:100%;min-height:200px;background:linear-gradient(160deg,#0c2a2e,#163840)}
+.fg-ph3{height:100%;min-height:200px;background:linear-gradient(160deg,#2e2010,#1c1006)}
+.fg-label{position:absolute;bottom:1.2rem;left:1.2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500}
+@media(max-width:820px){.fg{grid-template-columns:1fr;grid-template-rows:auto}.fg-cell.tall{grid-row:span 1}.fg-ph{min-height:56vw}.fg-ph2,.fg-ph3{min-height:44vw}}
+
+/* directory strip */
+.dir-strip{border-top:1px solid var(--line)}
+.dir-row{display:grid;grid-template-columns:3fr 2fr 1fr 120px;align-items:center;padding:1.4rem 0;border-bottom:1px solid var(--line);gap:1rem}
+.dir-row:hover{background:var(--off);margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter)}
+.dir-name{font-family:var(--serif);font-weight:300;font-size:1.2rem;letter-spacing:-.01em}
+.dir-cat{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:500}
+.dir-status{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--mid);text-align:center}
+.dir-status.open{color:var(--accent)}
+.dir-num{font-family:var(--serif);font-weight:300;font-size:.9rem;color:var(--dim);text-align:right;letter-spacing:.04em}
+@media(max-width:640px){.dir-row{grid-template-columns:1fr auto}.dir-cat,.dir-num{display:none}}
+
+/* two-col split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,6rem);align-items:center;max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)}
+.split.alt .split-media{order:2}
+.split-media{position:relative;aspect-ratio:4/5;overflow:hidden}
+.split-fill{position:absolute;inset:0;transition:transform 1.4s var(--ease)}
+.split-media:hover .split-fill{transform:scale(1.05)}
+.sf1{background:linear-gradient(150deg,#1a0e08,#2e180a)}
+.sf2{background:linear-gradient(150deg,#0c2630,#17404e)}
+.split-tag{position:absolute;bottom:1.2rem;left:1.2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.2);padding:.3rem .65rem}
+.split-copy .num{font-family:var(--serif);font-weight:300;font-size:3.5rem;color:var(--line);line-height:1;margin-bottom:1.2rem}
+.split-copy .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:.8rem;font-weight:500}
+.split-copy h2{font-size:clamp(1.7rem,1rem+2.2vw,2.8rem);margin-bottom:1.2rem}
+.split-copy p{color:var(--mid);max-width:44ch;font-weight:300;margin-bottom:1.6rem;line-height:1.75}
+.lnk{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.25rem}
+.lnk:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:820px){.split,.split.alt{grid-template-columns:1fr}.split.alt .split-media{order:0}.split-media{aspect-ratio:16/10}}
+
+/* full-width CTA */
+.cta-full{background:var(--ink);color:var(--white);display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:480px}
+.cta-copy{padding:clamp(3rem,7vw,7rem) clamp(1.5rem,5vw,5rem)}
+.cta-copy .eyebrow{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:1rem;font-weight:500}
+.cta-copy h2{color:var(--white);font-size:clamp(2rem,1.2rem+3vw,3.8rem);margin-bottom:1.2rem}
+.cta-copy p{color:rgba(255,255,255,.65);max-width:44ch;font-weight:300;margin-bottom:2.2rem;line-height:1.75}
+.btn-sand{background:var(--sand);color:var(--ink)}.btn-sand:hover{background:#e0cba8;transform:translateY(-2px)}
+.cta-visual{position:relative;overflow:hidden;min-height:320px}
+.cta-vfill{position:absolute;inset:0;background:linear-gradient(135deg,#1c0c06,#0d0605)}
+.cta-vfill:hover{transform:scale(1.04)}
+.cta-ph{position:absolute;bottom:1.2rem;right:1.2rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);border:1px dashed rgba(255,255,255,.2);padding:.3rem .65rem}
+@media(max-width:820px){.cta-full{grid-template-columns:1fr}.cta-visual{min-height:200px}}
+
+footer{text-align:center;padding:3rem 1rem;color:var(--dim);font-size:.82rem;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="ribbon">Concept C · Modern Minimal — placeholder photos</div>
+<header class="hdr" id="hdr"><div class="hdr-in">
+  <a class="logo" href="#">Plaza <em>La Cima</em></a>
+  <nav class="nav"><a href="stores.html">Stores</a><a href="dining.html">Dining</a><a href="events.html">Events</a><a href="visit.html">Visit</a><a class="book" href="leasing.html">Leasing</a></nav>
+</div></header>
+
+<!-- HERO — asymmetric two-panel -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-num">11800 Stagecoach Road · Little Rock, AR</p>
+    <h1>Plaza<br><em>La Cima</em></h1>
+    <p class="sub">A new shopping, dining &amp; gathering destination taking shape in southwest Little Rock — beginning with Tacos al Carbon.</p>
+    <div class="actions">
+      <a class="btn btn-ink" href="stores.html">Explore directory</a>
+      <a class="btn btn-outline" href="leasing.html">Leasing info</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-fill"></div>
+    <span class="hero-ph">Hero photo</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Tacos al Carbon · <em>Now open</em></span><span>Stagecoach Road</span><span>Little Rock, Arkansas</span><span>Café · Coming soon</span><span>Boutique · Coming soon</span><span>Salon &amp; Spa · Coming soon</span><span>Free parking</span><span>Year-round events</span>
+    <span>Tacos al Carbon · <em>Now open</em></span><span>Stagecoach Road</span><span>Little Rock, Arkansas</span><span>Café · Coming soon</span><span>Boutique · Coming soon</span><span>Salon &amp; Spa · Coming soon</span><span>Free parking</span><span>Year-round events</span>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<section class="padded reveal">
+  <div class="stmt">
+    <div class="stmt-top">
+      <span class="stmt-label">About</span>
+      <h2>More than a shopping center —<br>a <em>place to belong.</em></h2>
+    </div>
+    <div class="stmt-rule"></div>
+    <div class="stmt-footer">
+      <span class="stmt-tag">Southwest Little Rock · Opening 2026</span>
+      <a class="stmt-lnk" href="visit.html">Plan a visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE GRID -->
+<section class="reveal" aria-label="Plaza highlights">
+  <div class="fg">
+    <div class="fg-cell tall">
+      <div class="fg-fill fg-ph"></div>
+      <span class="fg-label">Photo — dining</span>
+    </div>
+    <div class="fg-cell">
+      <div class="fg-fill fg-ph2"></div>
+      <span class="fg-label">Photo — events</span>
+    </div>
+    <div class="fg-cell">
+      <div class="fg-fill fg-ph3"></div>
+      <span class="fg-label">Photo — plaza</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTORY STRIP -->
+<section class="padded">
+  <div style="max-width:1240px;margin-inline:auto;padding-inline:var(--gutter)">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.4rem" class="reveal">
+      <h2 style="font-size:clamp(1.6rem,1rem+2vw,2.6rem)">The directory</h2>
+      <a class="stmt-lnk" href="stores.html">All stores →</a>
+    </div>
+    <div class="dir-strip reveal">
+      <div class="dir-row">
+        <span class="dir-name">Tacos al Carbon</span>
+        <span class="dir-cat">Dining</span>
+        <span class="dir-status open">Open now</span>
+        <span class="dir-num">01</span>
+      </div>
+      <div class="dir-row">
+        <span class="dir-name">Coffee &amp; Café</span>
+        <span class="dir-cat">Dining</span>
+        <span class="dir-status">Coming soon</span>
+        <span class="dir-num">02</span>
+      </div>
+      <div class="dir-row">
+        <span class="dir-name">Boutique</span>
+        <span class="dir-cat">Fashion</span>
+        <span class="dir-status">Coming soon</span>
+        <span class="dir-num">03</span>
+      </div>
+      <div class="dir-row">
+        <span class="dir-name">Salon &amp; Spa</span>
+        <span class="dir-cat">Services</span>
+        <span class="dir-status">Coming soon</span>
+        <span class="dir-num">04</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 1 — Dining -->
+<section class="padded">
+  <div class="split reveal">
+    <div class="split-media">
+      <div class="split-fill sf1"></div>
+      <span class="split-tag">Photo — dining</span>
+    </div>
+    <div class="split-copy">
+      <div class="num">01</div>
+      <p class="eyebrow">Eat &amp; drink</p>
+      <h2>Flavor,<br>first.</h2>
+      <p>Tacos al Carbon leads the way — authentic tacos grilled al carbon. A local café, bakery, and sit-down restaurant follow.</p>
+      <a class="lnk" href="dining.html">Explore dining</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT 2 — Events -->
+<section class="padded" style="background:var(--off)">
+  <div class="split alt reveal">
+    <div class="split-media">
+      <div class="split-fill sf2"></div>
+      <span class="split-tag">Photo — events</span>
+    </div>
+    <div class="split-copy">
+      <div class="num">02</div>
+      <p class="eyebrow">Gather</p>
+      <h2>Always something on.</h2>
+      <p>Live music, weekend markets, and family festivals all season long — Plaza La Cima is built for the community.</p>
+      <a class="lnk" href="events.html">See what's on</a>
+    </div>
+  </div>
+</section>
+
+<!-- FULL-WIDTH CTA -->
+<section class="cta-full reveal">
+  <div class="cta-copy">
+    <p class="eyebrow">Leasing</p>
+    <h2>Become a founding tenant.</h2>
+    <p>Flexible spaces from 600 to 8,000 sq ft — available now on Stagecoach Road. Join Tacos al Carbon and the businesses moving in next.</p>
+    <a class="btn btn-sand" href="leasing.html">Request leasing info →</a>
+  </div>
+  <div class="cta-visual">
+    <div class="cta-vfill"></div>
+    <span class="cta-ph">Photo — plaza exterior</span>
+  </div>
+</section>
+
+<footer>11800 Stagecoach Road, Little Rock, AR 72210 · Style concept for review</footer>
+<script>
+var hdr=document.getElementById('hdr');
+function onScroll(){hdr.classList.toggle('solid',scrollY>60)}
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

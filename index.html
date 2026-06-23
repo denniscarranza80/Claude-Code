@@ -3,285 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Plaza La Cima — Little Rock's premier shopping, dining, and entertainment destination. Discover local shops, great food, and family events." />
-  <meta name="theme-color" content="#0f4c5c" />
-  <title>Plaza La Cima | Shopping &amp; Dining in Little Rock, AR</title>
+  <meta name="description" content="Plaza La Cima — a new shopping, dining, and gathering destination on Stagecoach Road in southwest Little Rock, Arkansas. Now open: Tacos al Carbon. More tenants coming soon — spaces now leasing." />
+  <meta name="theme-color" content="#0c3a46" />
+  <meta property="og:title" content="Plaza La Cima | Shopping & Dining in Little Rock, AR" />
+  <meta property="og:description" content="A new shopping & dining destination in southwest Little Rock. Now open: Tacos al Carbon. More coming soon." />
+  <meta property="og:type" content="website" />
+  <title>Plaza La Cima | Shopping &amp; Dining in Little Rock, Arkansas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- ===== Header / Nav ===== -->
-  <header class="site-header" id="top">
-    <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="Plaza La Cima home">
-        <span class="brand-mark" aria-hidden="true">◆</span>
-        <span class="brand-text">Plaza La&nbsp;Cima</span>
-      </a>
+<body class="page-fade">
+  <a href="#main" class="skip-link">Skip to content</a>
 
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Plaza La Cima — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+      </a>
       <nav class="nav" aria-label="Primary">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-menu" id="nav-menu">
-          <li><a href="#directory">Stores</a></li>
-          <li><a href="#dining">Dining</a></li>
-          <li><a href="#amenities">Amenities</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#visit">Visit</a></li>
-          <li><a href="#leasing" class="nav-cta">Leasing</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="stores.html">Stores</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="leasing.html" class="nav-cta">Leasing</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <!-- Hero photo: summit — "La Cima" (cropped from IMG_0297) -->
+      <div class="hero-bg" style="background-image:url('assets/hero-summit.jpg');background-position:center" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow">Little Rock, Arkansas</p>
-        <h1>Where the city comes to <span>shop, dine &amp; gather.</span></h1>
-        <p class="lede">
-          Plaza La Cima brings together more than 40 local boutiques, restaurants,
-          and services along the Arkansas River — all under one beautifully designed roof.
-        </p>
-        <div class="hero-actions">
-          <a href="#directory" class="btn btn-primary">Browse the directory</a>
-          <a href="#visit" class="btn btn-ghost">Hours &amp; directions</a>
-        </div>
-        <dl class="hero-stats">
-          <div><dt>40+</dt><dd>Shops &amp; eateries</dd></div>
-          <div><dt>1,200</dt><dd>Free parking spots</dd></div>
-          <div><dt>7 days</dt><dd>Open every week</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- ===== Featured / Highlights ===== -->
-    <section class="highlights container" aria-label="Highlights">
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">🛍️</span>
-        <h3>Local-first retail</h3>
-        <p>Curated boutiques and Arkansas-made goods you won't find at the mall.</p>
-      </article>
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">🍽️</span>
-        <h3>Chef-driven dining</h3>
-        <p>From quick bites to riverfront patios, eat your way around the plaza.</p>
-      </article>
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">🎉</span>
-        <h3>Year-round events</h3>
-        <p>Live music Fridays, farmers markets, and family festivals all season long.</p>
-      </article>
-      <article class="highlight">
-        <span class="highlight-icon" aria-hidden="true">🅿️</span>
-        <h3>Easy &amp; free parking</h3>
-        <p>1,200 covered spaces, EV charging, and stroller-friendly walkways.</p>
-      </article>
-    </section>
-
-    <!-- ===== Store Directory ===== -->
-    <section class="section" id="directory">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Store Directory</p>
-          <h2>Find your favorites</h2>
-          <p class="section-sub">Filter by category or search for a specific shop.</p>
-        </div>
-
-        <div class="directory-controls">
-          <label class="search">
-            <span class="visually-hidden">Search stores</span>
-            <input type="search" id="store-search" placeholder="Search stores…" autocomplete="off" />
-          </label>
-          <div class="filters" role="group" aria-label="Filter by category">
-            <button class="chip is-active" data-filter="all">All</button>
-            <button class="chip" data-filter="fashion">Fashion</button>
-            <button class="chip" data-filter="dining">Dining</button>
-            <button class="chip" data-filter="home">Home &amp; Gifts</button>
-            <button class="chip" data-filter="health">Health &amp; Beauty</button>
-            <button class="chip" data-filter="services">Services</button>
+        <div class="hero-glass">
+          <p class="eyebrow">Little Rock, Arkansas</p>
+          <h1>Where the city comes to <span>shop, dine&nbsp;&amp; gather.</span></h1>
+          <p class="lede">
+            A new shopping, dining, and gathering destination taking shape on Stagecoach
+            Road in southwest Little Rock. <strong>Tacos al Carbon</strong> is open now —
+            with a curated lineup of local shops and restaurants on the way.
+          </p>
+          <div class="hero-actions">
+            <a href="stores.html" class="btn btn-primary">Explore the directory</a>
+            <a href="visit.html" class="btn btn-ghost">Hours &amp; directions</a>
           </div>
+          <dl class="hero-stats">
+            <div><dt>Now Open</dt><dd>Tacos al Carbon</dd></div>
+            <div><dt>Free</dt><dd>On-site parking</dd></div>
+            <div><dt>Leasing</dt><dd>Spaces available</dd></div>
+          </dl>
         </div>
-
-        <ul class="store-grid" id="store-grid"><!-- populated by app.js --></ul>
-        <p class="no-results" id="no-results" hidden>No stores match your search.</p>
       </div>
     </section>
 
-    <!-- ===== Dining strip ===== -->
-    <section class="section section-alt" id="dining">
-      <div class="container dining-wrap">
-        <div class="dining-copy">
+    <!-- ===== Highlights ===== -->
+    <section class="container" aria-label="Highlights">
+      <ul class="highlights" style="list-style:none">
+        <li class="highlight" data-reveal>
+          <span class="highlight-icon" aria-hidden="true">🛍️</span>
+          <h3>Local-first retail</h3>
+          <p>Curated boutiques and Arkansas-made goods you won't find at the mall.</p>
+        </li>
+        <li class="highlight" data-reveal style="--reveal-delay:.08s">
+          <span class="highlight-icon" aria-hidden="true">🍽️</span>
+          <h3>Local-flavored dining</h3>
+          <p>Starting with Tacos al Carbon, with more cafés and restaurants on the way.</p>
+        </li>
+        <li class="highlight" data-reveal style="--reveal-delay:.16s">
+          <span class="highlight-icon" aria-hidden="true">🎉</span>
+          <h3>Year-round events</h3>
+          <p>Live music, farmers markets, and family festivals all season long.</p>
+        </li>
+        <li class="highlight" data-reveal style="--reveal-delay:.24s">
+          <span class="highlight-icon" aria-hidden="true">🅿️</span>
+          <h3>Easy &amp; free parking</h3>
+          <p>Ample free on-site parking, EV charging, and stroller-friendly walkways.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Featured stores ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Store Directory</p>
+          <h2>Taking shape</h2>
+          <p class="section-sub">Tacos al Carbon is open now. La Cima Laundromat, Chicken &amp; Waffles, a Jewelry Store, and a Massage Parlor are coming soon — plus two prime spaces still available to lease.</p>
+        </div>
+        <ul class="store-grid" id="store-grid" data-limit="8"><!-- populated by directory.js --></ul>
+        <p style="margin-top:2rem" data-reveal>
+          <a href="stores.html" class="btn btn-primary">Browse all stores <span aria-hidden="true">→</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Dining teaser (split) ===== -->
+    <section class="section">
+      <div class="container split">
+        <div class="split-copy" data-reveal>
           <p class="eyebrow">Eat &amp; Drink</p>
           <h2>A taste of Little Rock</h2>
           <p>
-            Grab a cup from a local roaster, share small plates on the patio, or pick up
-            dinner on the way home. Our food hall and sit-down spots cover every craving.
+            It starts with <strong>Tacos al Carbon</strong> — authentic Mexican
+            tacos grilled al carbon, fresh salsas, and house favorites. They also
+            serve <strong>fresh hand-made gelato</strong> and <strong>custom-brewed
+            espresso drinks made to order</strong>. A local café, bakery, and
+            sit-down restaurant are all part of what's coming to the plaza.
           </p>
-          <a href="#directory" class="btn btn-primary" data-jump="dining">See all dining</a>
+          <a href="dining.html" class="link-arrow">See all dining <span class="arr" aria-hidden="true">→</span></a>
         </div>
-        <ul class="dining-list">
-          <li><strong>Delta Roast Coffee</strong><span>Coffee &amp; pastries · $</span></li>
-          <li><strong>The Catfish Co.</strong><span>Southern comfort · $$</span></li>
-          <li><strong>Sora Ramen Bar</strong><span>Japanese · $$</span></li>
-          <li><strong>Pinnacle Pizza</strong><span>Wood-fired · $$</span></li>
-          <li><strong>Verdure</strong><span>Salads &amp; bowls · $</span></li>
-        </ul>
+        <div class="split-media" data-reveal aria-label="Dining at Plaza La Cima" role="img">
+          <div class="media-fill" style="background-image:url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80');background-size:cover;background-position:center" aria-hidden="true"></div>
+          <span class="media-tag">Tacos al Carbon · now open</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===== Amenities ===== -->
-    <section class="section" id="amenities">
+    <!-- ===== Events teaser ===== -->
+    <section class="section section-alt">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Amenities</p>
-          <h2>Designed for an easy day out</h2>
-        </div>
-        <ul class="amenity-grid">
-          <li><span aria-hidden="true">🅿️</span><div><h3>Free covered parking</h3><p>1,200 spaces with dedicated family &amp; accessible stalls.</p></div></li>
-          <li><span aria-hidden="true">⚡</span><div><h3>EV charging</h3><p>12 Level-2 chargers near the north entrance.</p></div></li>
-          <li><span aria-hidden="true">📶</span><div><h3>Free Wi-Fi</h3><p>Plaza-wide complimentary internet.</p></div></li>
-          <li><span aria-hidden="true">👶</span><div><h3>Family lounge</h3><p>Nursing room, play area, and stroller rentals.</p></div></li>
-          <li><span aria-hidden="true">♿</span><div><h3>Accessible</h3><p>Elevators, ramps, and wheelchair loan service.</p></div></li>
-          <li><span aria-hidden="true">🐾</span><div><h3>Pet friendly</h3><p>Leashed pets welcome in common areas.</p></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== Events ===== -->
-    <section class="section section-alt" id="events">
-      <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <p class="eyebrow">What's On</p>
           <h2>Upcoming events</h2>
           <p class="section-sub">Free and open to the public unless noted.</p>
         </div>
-        <ul class="event-list">
-          <li class="event">
-            <time datetime="2026-06-12"><span class="day">12</span><span class="mon">Jun</span></time>
-            <div><h3>Riverfront Live: Friday Music Series</h3><p>6–9 PM · Center Court · Local bands &amp; food trucks.</p></div>
-          </li>
-          <li class="event">
-            <time datetime="2026-06-20"><span class="day">20</span><span class="mon">Jun</span></time>
-            <div><h3>Saturday Farmers Market</h3><p>8 AM–1 PM · East Promenade · Produce, flowers &amp; makers.</p></div>
-          </li>
-          <li class="event">
-            <time datetime="2026-07-04"><span class="day">04</span><span class="mon">Jul</span></time>
-            <div><h3>Independence Day Family Festival</h3><p>4–10 PM · Games, vendors, and a riverside fireworks view.</p></div>
-          </li>
-          <li class="event">
-            <time datetime="2026-07-18"><span class="day">18</span><span class="mon">Jul</span></time>
-            <div><h3>Sip &amp; Shop Night Market</h3><p>5–9 PM · Extended hours, local art, and tastings.</p></div>
-          </li>
-        </ul>
+        <ul class="event-list" data-events-list data-limit="3"><!-- populated by content.js --></ul>
+        <p style="margin-top:2rem" data-reveal>
+          <a href="events.html" class="btn btn-ghost">View the full calendar <span aria-hidden="true">→</span></a>
+        </p>
       </div>
     </section>
 
-    <!-- ===== Visit / Hours / Map ===== -->
-    <section class="section" id="visit">
-      <div class="container visit-wrap">
-        <div class="visit-info">
-          <p class="eyebrow">Plan Your Visit</p>
-          <h2>Hours &amp; location</h2>
-          <table class="hours" aria-label="Opening hours">
-            <tbody>
-              <tr><th scope="row">Mon – Thu</th><td>10 AM – 8 PM</td></tr>
-              <tr><th scope="row">Friday</th><td>10 AM – 9 PM</td></tr>
-              <tr><th scope="row">Saturday</th><td>9 AM – 9 PM</td></tr>
-              <tr><th scope="row">Sunday</th><td>11 AM – 6 PM</td></tr>
-            </tbody>
-          </table>
-          <address class="address">
-            <strong>Plaza La Cima</strong><br />
-            1500 River Market Avenue<br />
-            Little Rock, AR 72201<br />
-            <a href="tel:+15015550142">(501) 555-0142</a>
-          </address>
-          <a class="btn btn-primary" href="https://maps.google.com/?q=Little+Rock+AR+River+Market+Avenue" target="_blank" rel="noopener">Get directions ↗</a>
-        </div>
-        <div class="visit-map">
-          <iframe
-            title="Map of Plaza La Cima, Little Rock, AR"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-92.272%2C34.744%2C-92.262%2C34.752&amp;layer=mapnik&amp;marker=34.748%2C-92.267">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Leasing / Contact ===== -->
-    <section class="section leasing" id="leasing">
-      <div class="container leasing-wrap">
-        <div class="leasing-copy">
-          <p class="eyebrow eyebrow-light">Leasing</p>
-          <h2>Bring your business to Plaza La Cima</h2>
+    <!-- ===== Leasing CTA band ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <p class="eyebrow eyebrow-light center">Leasing</p>
+          <h2>Bring your business to the summit</h2>
           <p>
-            Join a thriving community of local retailers and restaurateurs.
-            Flexible spaces from 600 to 8,000 sq ft are available now.
-            Tell us about your concept and our leasing team will be in touch.
+            Be part of a brand-new retail community in southwest Little Rock. Flexible
+            spaces from 600 to 8,000 sq ft are available now on Stagecoach Road — join
+            Tacos al Carbon and the tenants moving in next.
           </p>
-          <ul class="leasing-points">
-            <li>High foot traffic in the heart of the River Market District</li>
-            <li>Turnkey and build-out spaces available</li>
-            <li>Marketing &amp; events support for every tenant</li>
-          </ul>
+          <div class="hero-actions">
+            <a href="leasing.html" class="btn btn-gold">Request leasing info</a>
+            <a href="visit.html" class="btn btn-ghost">Plan a visit</a>
+          </div>
         </div>
-        <form class="leasing-form" id="leasing-form" novalidate>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required autocomplete="name" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
-          </div>
-          <div class="field">
-            <label for="business">Business / concept</label>
-            <input id="business" name="business" type="text" />
-          </div>
-          <div class="field">
-            <label for="message">Tell us more</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Request leasing info</button>
-          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
   </main>
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">◆</span>
-        <span class="brand-text">Plaza La Cima</span>
-        <p>1500 River Market Avenue · Little Rock, AR 72201</p>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M2.5 19.5 9 7l3.5 6.5L15 9l6.5 10.5Z" fill="currentColor"/></svg>
+            </span>
+            <span class="brand-text">Plaza La&nbsp;Cima<small>Little Rock, AR</small></span>
+          </a>
+          <p>11800 Stagecoach Road, Little Rock, AR 72210. A new shopping &amp; dining destination in southwest Little Rock.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Plaza La Cima on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.3C16.7.2 15.8 0 14.7 0 12.3 0 11 1.4 11 4v2H8v3h3v9h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Plaza La Cima on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Plaza La Cima on X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6.1L7.5 21H4.5l7.4-8.5L4 3h6.5l4.5 5.6Zm-1.1 16h1.7L7.7 4.8H5.9z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="stores.html">Store directory</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="visit.html">Hours &amp; map</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Business</h4>
+          <ul>
+            <li><a href="leasing.html">Leasing</a></li>
+            <li><a href="leasing.html">Available spaces</a></li>
+            <li><a href="visit.html#contact">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon–Thu · 10–8</li>
+            <li>Friday · 10–9</li>
+            <li>Saturday · 9–9</li>
+            <li>Sunday · 11–6</li>
+          </ul>
+        </div>
       </div>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="#directory">Stores</a>
-        <a href="#dining">Dining</a>
-        <a href="#events">Events</a>
-        <a href="#visit">Visit</a>
-        <a href="#leasing">Leasing</a>
-      </nav>
-      <div class="footer-social">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="X">X</a>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Plaza La Cima. All rights reserved.</p>
+        <p>Made in Little Rock, Arkansas.</p>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> Plaza La Cima. All rights reserved.</p>
-      <p>Made in Little Rock, Arkansas.</p>
     </div>
   </footer>
 
+  <script src="data.js"></script>
+  <script src="directory.js"></script>
+  <script src="content.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
