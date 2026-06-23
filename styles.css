@@ -374,7 +374,7 @@ p { color: var(--ink-soft); }
 /* Bright, high-contrast text over the more-transparent glass panel */
 .hero .eyebrow { color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6); }
 .hero h1 { color: #fff; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.55); }
-.hero h1 span { color: #ffd98a; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.55); }
+.hero h1 span { color: #fff; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.55); }
 .hero .lede { color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.55); }
 .hero .lede strong { color: #fff; font-weight: 700; }
 .hero-stats { border-top-color: rgba(255, 255, 255, 0.3); }
