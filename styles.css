@@ -356,19 +356,28 @@ p { color: var(--ink-soft); }
   background-size: cover;
   background-position: center;
 }
-/* Home hero scrim: strong cream on the left (text side), photo visible on the right */
+/* Home hero: keep the photo clear (no cream wash). A very light, mostly
+   transparent dark gradient on the lower-left just lifts text legibility
+   without blurring the image. */
 .hero .hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(95deg,
-      rgba(250, 246, 239, 0.97) 0%,
-      rgba(250, 246, 239, 0.92) 32%,
-      rgba(250, 246, 239, 0.60) 62%,
-      rgba(248, 240, 228, 0.38) 100%),
-    linear-gradient(0deg, rgba(242, 234, 224, 0.55), transparent 42%);
+    linear-gradient(105deg, rgba(8, 22, 28, 0.34) 0%, rgba(8, 22, 28, 0.14) 40%, transparent 68%),
+    linear-gradient(0deg, rgba(8, 22, 28, 0.26), transparent 48%);
 }
+/* Light text treatment so the headline reads cleanly over the photo */
+.hero .eyebrow { color: #fff; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45); }
+.hero h1 { color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.5); }
+.hero h1 span { color: var(--gold-300); }
+.hero .lede { color: #fff; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.55); }
+.hero .lede strong { color: #fff; }
+.hero-stats { border-top-color: rgba(255, 255, 255, 0.3); }
+.hero-stats dt { color: #fff; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
+.hero-stats dd { color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); }
+.hero .btn-ghost { color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+.hero .btn-ghost:hover { background: rgba(255, 255, 255, 0.14); border-color: #fff; color: #fff; }
 /* Interior page hero scrim: centered text → fuller, even cream wash */
 .page-hero .hero-bg::after {
   content: "";
@@ -377,9 +386,9 @@ p { color: var(--ink-soft); }
   background: linear-gradient(180deg, rgba(250, 246, 239, 0.84), rgba(242, 234, 224, 0.90));
 }
 @media (max-width: 720px) {
-  /* On phones the headline spans full width — wash the whole image for legibility */
+  /* On phones the headline spans full width — a touch more darkening for legibility */
   .hero .hero-bg::after {
-    background: linear-gradient(180deg, rgba(250, 246, 239, 0.93), rgba(250, 246, 239, 0.84));
+    background: linear-gradient(0deg, rgba(8, 22, 28, 0.45), rgba(8, 22, 28, 0.2) 60%, rgba(8, 22, 28, 0.1));
   }
 }
 
